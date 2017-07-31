@@ -26,19 +26,32 @@ function getRandomQuote() {
     quotesCopy = [].concat(quotes);
   }
   var quote = quotesCopy.splice(
-    Math.floor(Math.random() * quotesCopy.length), 1
+    Math.floor(Math.random() * quotesCopy.length),
+    1
   )[0];
   console.log(quotesCopy);
   return quote;
 }
 
+// Timer
+function timer() {
+  clearInterval(window.intervalID);
+  window.intervalID = setInterval(printQuote, 30000);
+}
+
+// Changes background and button colors
+function changeColors() {
+  document.getElementById(
+    "loadQuote"
+  ).style.backgroundColor = document.body.style.backgroundColor = getRandomColor();
+}
 /* this function calls the randomQuote function and prints the quote to the page
 using the template supplied in the project instructions.
-Background and button colors change each time the quote changes.
+Background and button colors change each time the quote changes by calling changeColors.
 printQuote doesn't add a for a missing citation or a if the year property is missing
  Looked at CSS Properties Reference to find which property to use to
 access backgroundColor https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Properties_Reference
-Quotes change automatically after 30 seconds passes.
+Quotes change automatically after 30 seconds passes by calling timer.
 */
 
 function printQuote() {
@@ -54,11 +67,8 @@ function printQuote() {
   message += "</p>";
 
   document.getElementById("quote-box").innerHTML = message;
-  document.getElementById(
-    "loadQuote"
-  ).style.backgroundColor = document.body.style.backgroundColor = getRandomColor();
-  clearInterval(window.intervalID);
-  window.intervalID = setInterval(printQuote, 30000);
+  changeColors();
+  timer();
 }
 
 printQuote();
