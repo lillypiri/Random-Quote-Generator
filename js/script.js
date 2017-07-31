@@ -17,6 +17,7 @@ function getRandomColor() {
   return colour;
 }
 
+// Quotes change automatically after 30 seconds passes.
 function changeQuote() {
   timeoutID = window.setInterval(printQuote, 30000);
 }
@@ -37,22 +38,22 @@ function getRandomQuote() {
   return quote;
 }
 
-/* this function calls the randomQuote function
-also prints the quote to the page using the template supplied in the project instructions
-Quotes change automatically after certain amount of time passes
-Background color changes each time the quote changes */
-//printQuote doesn't add a for a missing citation or a if the year property is missing
-// Looked at CSS Properties Reference to find which property to use to
-// access backgroundColor https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Properties_Reference
+/* this function calls the randomQuote function and prints the quote to the page
+using the template supplied in the project instructions.
+Background and button colors change each time the quote changes.
+printQuote doesn't add a for a missing citation or a if the year property is missing
+ Looked at CSS Properties Reference to find which property to use to
+access backgroundColor https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Properties_Reference
+*/
 
 function printQuote() {
   currentQuote = getRandomQuote();
   var message = '<p class="quote">' + currentQuote.quote + "</p>";
   message += '<p class="source">' + currentQuote.source;
-  message += '<span class="citation">' + currentQuote.citation + "</span>";
-  if (currentQuote.date === null) {
-    '<span class="year">' + "</span>";
-  } else {
+  if (currentQuote.citation) {
+    message += '<span class="citation">' + currentQuote.citation + "</span>";
+  }
+  if (currentQuote.date) {
     message += '<span class="year">' + currentQuote.date + "</span>";
   }
   message += "</p>";

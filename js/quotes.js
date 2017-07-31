@@ -29,7 +29,6 @@ var quotes = [
   {
     quote: "I am angry. We should all be angry. Anger has a long history of bringing about positive change.",
     source: "Chimamanda Ngozi Adichie",
-    citation: "We Should All Be Feminists",
     date: "2014",
     tags: ["anger", "change"]
   },
@@ -39,5 +38,15 @@ var quotes = [
     citation: "Lady Sings the Blues",
     date: "1956",
     tags: ["comeback", "life"]
+  },
+  {
+    quote: "Books! And cleverness! There are more important things — friendship and bravery.",
+    source: "Hermione Granger",
+    tags: ["friendship", "bravery"]
+  },
+  {
+    quote: "5 points will be awarded to each of you.. For sheer dumb luck!",
+    source: "Minerva McGonagall",
+    tags: ["luck", "foolish"]
   }
 ];
