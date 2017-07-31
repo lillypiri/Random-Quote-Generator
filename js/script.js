@@ -55,7 +55,7 @@ Quotes change automatically after 30 seconds passes by calling timer.
 */
 
 function printQuote() {
-  currentQuote = getRandomQuote();
+  var currentQuote = getRandomQuote();
   var message = '<p class="quote">' + currentQuote.quote + "</p>";
   message += '<p class="source">' + currentQuote.source;
   if (currentQuote.citation) {
