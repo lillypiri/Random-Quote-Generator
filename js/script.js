@@ -1,11 +1,11 @@
 var quotesCopy = [];
 
-// event listener to respond to "Show another quote" button clicks
-// when user clicks anywhere on the button, the "printQuote" function is called
+/* Event listener to respond to "Show another quote" button clicks.
+When user clicks anywhere on the button, the "printQuote" function is called.
+Found information about intervals and timers on https://javascriptweblog.wordpress.com/2010/06/28/understanding-javascript-timers/ */
 document.getElementById("loadQuote").addEventListener("click", printQuote);
 
 window.onload = printQuote();
-
 
 // This function only goes to A so that the colour will most likely be darker and the text remains legible.
 function getRandomColor() {
@@ -16,12 +16,6 @@ function getRandomColor() {
   }
   return colour;
 }
-
-// Quotes change automatically after 30 seconds passes.
-function changeQuote() {
-  timeoutID = window.setInterval(printQuote, 30000);
-}
-changeQuote();
 
 /* This function checks to see if quotesCopy is empty, and if it is empty, it
 clones the quotes array into the quotesCopy array. It then splices a random object
@@ -44,6 +38,7 @@ Background and button colors change each time the quote changes.
 printQuote doesn't add a for a missing citation or a if the year property is missing
  Looked at CSS Properties Reference to find which property to use to
 access backgroundColor https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Properties_Reference
+Quotes change automatically after 30 seconds passes.
 */
 
 function printQuote() {
@@ -62,6 +57,8 @@ function printQuote() {
   document.getElementById(
     "loadQuote"
   ).style.backgroundColor = document.body.style.backgroundColor = getRandomColor();
+  clearInterval(window.intervalID);
+  window.intervalID = setInterval(printQuote, 30000);
 }
 
 printQuote();
