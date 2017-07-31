@@ -1,8 +1,8 @@
-#### Project 1 💻
+#### Project 1 💬🎲
 
 ## Random Quote Generator
 
-###### This is the first of twelve projects for the Treehouse Techdegree Full Stack JavaScript.
+###### This is the first of twelve projects for the 🏡 Treehouse Techdegree Full Stack JavaScript.
 
 
 👩‍💻  I've aimed for Exceeds Expectations by expanding the project as follows:
