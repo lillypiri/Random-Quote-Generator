@@ -1,6 +1,0 @@
-// console.log(quotes.join(', '))
-
-// array.unshift('this moves the item to the top of the array');
-//array.push('this adds an item to the array');
-//array.shift('this removes the first item from the array and returns it')
-//array.pop('this removes the last item from the array and returns it')

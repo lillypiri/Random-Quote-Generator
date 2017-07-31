@@ -31,8 +31,9 @@ function getRandomQuote() {
     quotesCopy = [].concat(quotes);
   }
   var quote = quotesCopy.splice(
-    Math.floor(Math.random() * quotesCopy.length, 1)
+    Math.floor(Math.random() * quotesCopy.length), 1
   )[0];
+  console.log(quotesCopy);
   return quote;
 }
 
