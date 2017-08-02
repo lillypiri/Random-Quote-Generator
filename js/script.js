@@ -3,7 +3,10 @@ var quotesCopy = [];
 /* Event listener to respond to "Show another quote" button clicks.
 When user clicks anywhere on the button, the "printQuote" function is called.
 Found information about intervals and timers on https://javascriptweblog.wordpress.com/2010/06/28/understanding-javascript-timers/ */
-document.getElementById("loadQuote").addEventListener("click", printQuote);
+document.getElementById("loadQuote").addEventListener("click", function() {
+  timer();
+  printQuote();
+});
 
 window.onload = printQuote();
 
@@ -29,6 +32,7 @@ function getRandomQuote() {
     Math.floor(Math.random() * quotesCopy.length),
     1
   )[0];
+  // this log has been left in to show that the copy is being used.
   console.log(quotesCopy);
   return quote;
 }
@@ -38,6 +42,7 @@ function timer() {
   clearInterval(window.intervalID);
   window.intervalID = setInterval(printQuote, 30000);
 }
+timer();
 
 // Changes background and button colors
 function changeColors() {
@@ -68,7 +73,6 @@ function printQuote() {
 
   document.getElementById("quote-box").innerHTML = message;
   changeColors();
-  timer();
 }
 
 printQuote();
